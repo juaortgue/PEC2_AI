@@ -3860,7 +3860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6698439138820621466, guid: 852da68ba3bd1fd4b816d0afff16c3f2, type: 3}
       propertyPath: m_Name
-      value: Tree20 (1)
+      value: TreeFlock
       objectReference: {fileID: 0}
     - target: {fileID: 6698439138820621466, guid: 852da68ba3bd1fd4b816d0afff16c3f2, type: 3}
       propertyPath: m_TagString
@@ -4242,8 +4242,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insectPrefab: {fileID: 253585739494766469, guid: 47b84881030f41f46ab96d9b0dc281e4, type: 3}
-  numInsects: 20
+  numInsects: 50
   allInsects: []
+  neighbourDistance: 4.2
+  minSpeed: 3
+  maxSpeed: 3
+  rotationSpeed: 4
+  minX: -20
+  maxX: 16.5
+  minY: 6
+  maxY: 15
+  minZ: -15
+  maxZ: 15
+  defaultSpeed: 5
 --- !u!1 &1019408576
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,7 +52,7 @@ public class WanderStatus : IActualStatus
     }
    
      public void OnTriggerEnter(Collider other) {
-        Debug.Log($"entro");
+        
         if (other.CompareTag("banch"))
         {
             isNearBanch = true;
@@ -63,7 +63,7 @@ public class WanderStatus : IActualStatus
         {
             isNearBanch = false;
             hasExitedBanchArea = true; 
-            Debug.Log($"me salgo");
+            
         }
     }
 }
