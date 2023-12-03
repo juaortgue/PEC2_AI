@@ -4248,12 +4248,12 @@ MonoBehaviour:
   minSpeed: 3
   maxSpeed: 3
   rotationSpeed: 4
-  minX: -20
-  maxX: 16.5
-  minY: 6
-  maxY: 15
-  minZ: -15
-  maxZ: 15
+  minX: -23
+  maxX: 23
+  minY: 4.6
+  maxY: 13
+  minZ: -23
+  maxZ: 23
   defaultSpeed: 5
 --- !u!1 &1019408576
 GameObject:
