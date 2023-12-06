@@ -4146,6 +4146,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6540681369557983152, guid: d77999c19b7f3294599d4029e5b08ace, type: 3}
       insertIndex: -1
       addedObject: {fileID: 940524030}
+    - targetCorrespondingSourceObject: {fileID: 6540681369557983152, guid: d77999c19b7f3294599d4029e5b08ace, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 940524031}
   m_SourcePrefab: {fileID: 100100000, guid: d77999c19b7f3294599d4029e5b08ace, type: 3}
 --- !u!4 &940524025 stripped
 Transform:
@@ -4171,7 +4174,7 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -4222,8 +4225,9 @@ MonoBehaviour:
     intParams: 
     intParamsNames: []
     intParamsLostDefaultValue: 
-    boolParams: 
-    boolParamsNames: []
+    boolParams: 00
+    boolParamsNames:
+    - canFollow
     boolParamsLostDefaultValue: 
     floatParams: []
     floatParamsNames: []
@@ -4236,8 +4240,14 @@ MonoBehaviour:
     colorParamsLostDefaultValue: 
     objectParams:
     - {fileID: 1027629824}
+    - {fileID: 940524026}
+    - {fileID: 1904656182}
+    - {fileID: 8300000, guid: 4e1fbd5bfab217f49b0a6e5a5e776780, type: 3}
     objectParamsNames:
     - wanderArea
+    - PoliceMan
+    - thief
+    - clip
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
@@ -4268,6 +4278,19 @@ MonoBehaviour:
     quaternionParams: []
     quaternionParamsNames: []
     quaternionParamsLostDefaultValue: 
+--- !u!114 &940524031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940524026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f3a9312506f7b49bc49b7449bf1451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFollow: 0
 --- !u!1 &958280596
 GameObject:
   m_ObjectHideFlags: 0
@@ -9792,10 +9815,12 @@ MonoBehaviour:
     - {fileID: 1027629824}
     - {fileID: 1534597406}
     - {fileID: 8300000, guid: b6768c51e97601843920693ec84cc6ad, type: 3}
+    - {fileID: 940524026}
     objectParamsNames:
     - wanderArea
     - player
     - clip
+    - PoliceMan
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
