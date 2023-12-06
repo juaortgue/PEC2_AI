@@ -9816,11 +9816,13 @@ MonoBehaviour:
     - {fileID: 1534597406}
     - {fileID: 8300000, guid: b6768c51e97601843920693ec84cc6ad, type: 3}
     - {fileID: 940524026}
+    - {fileID: 1904656182}
     objectParamsNames:
     - wanderArea
     - player
     - clip
     - PoliceMan
+    - Thief
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []
