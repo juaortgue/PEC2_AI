@@ -23,31 +23,16 @@ public class FlockManager : MonoBehaviour
     public float minZ = -13f;
     public float maxZ = 13f;
     public float defaultSpeed = 5f;
+
     void Start() {
         
         allInsects = new GameObject[numInsects];
         for (int i = 0; i < numInsects; ++i) {
-            Vector3 pos = this.transform.position + new Vector3(Random.Range(-10, 10), Random.Range(4, 7), Random.Range(-10, 10));
+            Vector3 pos = this.transform.position + 
+            new Vector3(Random.Range(minX+1, maxX-1), Random.Range(minY-1, maxY-1), Random.Range(minZ+1, maxZ-1));
             Vector3 randomize = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1));
             allInsects[i] = (GameObject)Instantiate(insectPrefab, pos, Quaternion.LookRotation(randomize));
             allInsects[i].GetComponent<Flock>().myManager = this;
         }
     }
-
-    void Update()
-    {
-        //MoveSwarm();
-    }
-
-    /*void MoveSwarm()
-    {
-        
-
-        // Actualizar la posición de cada insecto basándose en el comportamiento de flocking
-        foreach (GameObject insect in allInsects)
-        {
-            InsectManager insectBehavior = insect.GetComponent<InsectManager>();
-            insectBehavior.ApplyFlockingBehavior(allInsects, swarmCenter.position);
-        }
-    }*/
 }

@@ -7,40 +7,7 @@ public class Flock : MonoBehaviour
     public FlockManager myManager;
     private float speed;
     private Vector3 cohesion,align,separation,direction;
-   
-    /*void Move()
-{
-    transform.rotation = Quaternion.Slerp(transform.rotation,
-                                        Quaternion.LookRotation(direction),
-                                        myManager.rotationSpeed * Time.deltaTime);
-    transform.Translate(0.0f, 0.0f, Time.deltaTime * speed);
 
-    float margenDeError = 0.5f; // Ajusta el margen según tus necesidades
-    Vector3 newPosition = transform.position;
-
-    // Comprobación para el eje Z
-    if (Mathf.Abs(newPosition.z - myManager.minZ) <= margenDeError ||
-        Mathf.Abs(newPosition.z - myManager.maxZ) <= margenDeError)
-    {
-        newPosition.z = Random.Range(myManager.minZ, myManager.maxZ);
-    }
-
-    // Comprobación para el eje X
-    if (Mathf.Abs(newPosition.x - myManager.minX) <= margenDeError ||
-        Mathf.Abs(newPosition.x - myManager.maxX) <= margenDeError)
-    {
-        newPosition.x = Random.Range(myManager.minX, myManager.maxX);
-    }
-
-    // Comprobación para el eje Y
-    if (Mathf.Abs(newPosition.y - myManager.minY) <= margenDeError ||
-        Mathf.Abs(newPosition.y - myManager.maxY) <= margenDeError)
-    {
-        newPosition.y = Random.Range(myManager.minY, myManager.maxY);
-    }
-
-    transform.position = newPosition;
-}*/
     void Move()
     {
         LimitMovement();
@@ -86,8 +53,6 @@ public class Flock : MonoBehaviour
         CalculateAlign();
         CalculateSeparation();
         direction = (cohesion + align + separation).normalized * speed;
-
-       
     }
     void CalculateSeparation(){
         separation = Vector3.zero;
@@ -98,7 +63,6 @@ public class Flock : MonoBehaviour
                 if (distance <= myManager.neighbourDistance){
                     Vector3 separationForce = (transform.position - go.transform.position).normalized;
                     separation += separationForce / distance;
-                    //separation -= (transform.position - go.transform.position) / (distance * distance) ;
                 }
                     
             }
